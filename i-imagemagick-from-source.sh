@@ -76,7 +76,7 @@ if ! apt-get install -y xmlstarlet; then
 fi
 die-if-program-not-available xmlstarlet "Dependency 'xmlstarlet' didn't install correctly."
 
-# install packages possibly needed by libwebp
+# install packages needed by libwebp
 apt-get install -y libjpeg-dev libpng-dev libtiff-dev libgif-dev
 
 # install libwebp from source
