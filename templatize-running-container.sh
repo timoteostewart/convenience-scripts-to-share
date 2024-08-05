@@ -62,7 +62,7 @@ pct_status_output=$(pct status "${container_id}")
 printf "Container ${container_id} has stopped.\n"
 
 # perform post-decustomization backup
-vzdump_output=$(vzdump "${container_id}" --compress "${compression_to_use}" --storage local --mode snapshot --notes-template "post-decustomization backup of vmid {{vmid}}" || die "post-customization vzdump failed." 2>&1)
+vzdump_output=$(vzdump "${container_id}" --compress "${compression_to_use}" --storage local --mode snapshot --notes-template "post-decustomization backup of vmid {{vmid}}" || die "post-customization vzdump failed.")
 
 dump_path=$(echo "${vzdump_output}" | grep -oP "creating vzdump archive '\K[^']+")
 dump_dir=$(dirname "${dump_path}")
